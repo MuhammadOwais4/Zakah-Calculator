@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    </meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </meta>
+    <title>Zakah Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </meta>
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"></link>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    </link>
+</head>
+
+<body>
+    <banner>
+        <img src="./saylani logo.png" class="yes" alt="Saylani Logo">
+    </banner>
+    <header>
+        <h3><i class="bi bi-cash-coin"></i> Zakah Calculator</h3>
+        <h3 class="urdu">زکوۃ کیلکولیٹر <i class="bi bi-calculator-fill"></i></h3>
+    </header>
+    <div class="instructions">
+        <a href="javascript:void(0)" onclick="showInstructions()">
+            <row>
+                <i class="bi bi-caret-down-fill black"></i>
+                <h3><i class="bi bi-cash-coin"></i>Instructions</h3>
+                <h3 class="urdu">ضروری ہدا یات<i class="bi bi-calculator"></i></h3>
+            </row>
+        </a>
+    </div>
+    <!-- .................................................................................. -->
+    <row class="width-80 no">
+        <h4>VALUE OF ASSETS ON WHICH ZAKAH HAS TO BE CALCULATED</h4>
+        <p class="urdu">(قابلِ زکٰوۃاثا ثوں کی مالیت)</p>
+    </row>
+    <div id="carouselExampleIndicators" class="carousel slide grey-bg no">
+        <div class="carousel-indicators indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active slide-button" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" class="slide-button"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" class="slide-button"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <row class="width-100">
+                    <h3>Gold & Silver</h3>
+                    <p class="urdu">(سونا اور چاندی)</p>
+                </row>
+
+                <column>
+                    <label for="gold">Gold <span class="urdu">(سونا)</span></label>
+                    <input required type="number" class="input" id="gold" placeholder="Enter Amount">
+
+                    <label for="silver">Silver <span class="urdu">(چاندی)</span></label>
+                    <input required type="number" class="input" id="silver" placeholder="Enter Amount">
+                </column>
+
+
+            </div>
+            <div class="carousel-item">
+
+
+                <row class="width-100">
+                    <h3>Currency</h3>
+                    <p class="urdu">(کرنسی)</p>
+                </row>
+
+                <column>
+                    <label for="local-currency">Local and foreign currency with current rates <span class="urdu"> (ملکی وغیرملکی کرنسی مو جودہ ر یٹ)</span></label>
+                    <input required type="number" class="input" id="local-currency" placeholder="Enter Amount">
+                    <label for="money-deposited">Money deposited in banks (excluding interest) <span class="urdu"> بینکوں میں جمع شدہ رقم (علاوہ سود)</span></label>
+                    <input required type="number" class="input" id="money-deposited" placeholder="Enter Amount">
+                    <label for="prize-bonds">Prize Bonds <span class="urdu"> (پرائز بانڈز)</span></label>
+                    <input required type="number" class="input" id="prize-bonds" placeholder="Enter Amount">
+                    <label for="provident-fund">Money deposited in provident fund <span class="urdu"> (پراویڈ نٹ فنڈ میں جمع شدہ رقم)</span></label>
+                    <input required type="number" class="input" id="provident-fund" placeholder="Enter Amount">
+                    <label for="commitee">Money deposited in committee <span class="urdu"> (بی سی اور کمیشن میں جمع شدہ رقم)</span></label>
+                    <input required type="number" class="input" id="commitee" placeholder="Enter Amount">
+                </column>
+
+
+            </div>
+            <div class="carousel-item">
+
+
+                <row class="width-100">
+                    <h3>Merchandize</h3>
+                    <p class="urdu">(مالِ تجارت)</p>
+                </row>
+
+                <column>
+                    <label for="raw-material">Raw materials in factory etc <span class="urdu"> (خام مال فیکٹری وغیرہ میں)</span></label>
+                    <input required type="number" class="input" id="raw-material" placeholder="Enter Amount">
+                    <label for="manufactured-goods">Manufactured goods in factory/shop etc <span class="urdu"> (تیار شدہ مال فیکٹری یا دکان وغیرہ میں)</span></label>
+                    <input required type="number" class="input" id="manufactured-goods" placeholder="Enter Amount">
+                    <label for="plots">Plots, houses or flats for trading <span class="urdu"> (تجارتی پلاٹس، مکان یا فلیٹ)</span></label>
+                    <input required type="number" class="input" id="plots" placeholder="Enter Amount">
+                    <label for="others"><h6>Business partnership assets on which Zakah is to be calculated </h6><span class="urdu"> (کاروبار میں شراکت کے قابل زکٰوۃاثاثہ جات)</span></label>
+                    <input required type="number" class="input" id="others" placeholder="Enter Amount">
+                </column>
+
+
+            </div>
+
+
+
+        </div>
+        <button class="carousel-control-prev side-buttons" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon prev" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next side-buttons" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon next" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- .................................................................................. -->
+    <!-- .................................................................................. -->
+
+    <row class="width-80 no">
+        <h4>AMOUNT TO BE DEDUCTED FROM TOTAL ZAKAH-ABLE WEALTH (I.E. LIABILITIES)</h4>
+        <p class="urdu"> وہ رقم جو مالِ زکوٰۃ سے الگ کرنی ہے</p>
+    </row>
+    <div id="carouselExampleIndicators1" class="carousel slide grey-bg no">
+        <div class="carousel-indicators indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="active slide-button" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1" aria-label="Slide 2" class="slide-button"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2" aria-label="Slide 3" class="slide-button"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <column>
+                    <label for="loan">Loan, if any <span class="urdu"> (اگر قرضہ لیا ہواہے)</span></label>
+                    <input required type="number" class="input" id="loan" placeholder="Enter Amount">
+                    <label for="dues">Dues instalments on house, shop, things <span class="urdu"> (مکان، دکان اشیا ء کی واجب الاداقسطیں)</span></label>
+                    <input required type="number" class="input" id="dues" placeholder="Enter Amount">
+                    <label for="remaining-commitee">Remaining payable amount of committee (provided that one has already got the total amount of the committee) <span class="urdu"> (کمیٹی کے بقایاجات جب کےیہ کمیٹی مل چکی ہو)</span></label>
+                    <input required type="number" class="input" id="remaining-commitee" placeholder="Enter Amount">
+                </column>
+
+            </div>
+
+            <div class="carousel-item">
+
+                <column>
+                    <label for="utility-bills">Utility bills such as the bills of gas, electricity etc. provided that one has got the bills before the Zakah year is complete <span class="urdu"> (یوٹیلیٹی بلز، بجلی، گیس وغیرہ اگر سال پورا ہونے سے پہلے آچکے ہوں)</span></label>
+                    <input required type="number" class="input" id="utility-bills" placeholder="Enter Amount">
+                    <label for="dealers">Payables to Dealers <span class="urdu"> ( پارٹیوں کی ادائیگیاں )</span></label>
+                    <input required type="number" class="input" id="dealers" placeholder="Enter Amount">
+                </column>
+
+            </div>
+
+            <div class="carousel-item">
+
+                <column>
+                    <label for="salaries">Salaries of employees <span class="urdu"> (ملازمین کی تنخواہیں)</span></label>
+                    <input required type="number" class="input" id="salaries" placeholder="Enter Amount">
+                    <label for="unpaid-zakah">Unpaid Zakah of the previous year <span class="urdu"> (گزشتہ سال کی زکٰوۃجو ادا نہ کی گئی ہو.)</span></label>
+                    <input required type="number" class="input" id="unpaid-zakah" placeholder="Enter Amount">
+                </column>
+
+            </div>
+
+
+        </div>
+        <button class="carousel-control-prev side-buttons" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon prev" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next side-buttons" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
+          <span class="carousel-control-next-icon next" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- .................................................................................. -->
+    <!-- .................................................................................. -->
+
+    <div id="carouselExampleIndicators2" class="carousel slide grey-bg no">
+        <div class="carousel-indicators indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active slide-button" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2" class="slide-button"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3" class="slide-button"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="3" aria-label="Slide 4" class="slide-button"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <column>
+                    <label for="amount-payable"><h6>The amount of total wealth of Zakah </h6><span class="urdu"> کل مال زکٰوۃ(رقم)</span></label>
+                    <p class="output" id="amount-payable"></p>
+                </column>
+
+            </div>
+
+            <div class="carousel-item">
+
+                <column>
+                    <label for="liabilities"><h6>Liabilities </h6><span class="urdu">  (منہاشدہ رقم )</span></label>
+                    <p class="output" id="liabilities"></p>
+                </column>
+
+            </div>
+
+            <div class="carousel-item">
+
+                <column>
+                    <label for="payable-amount-total"><h6>Amount on which Zakah has to be calculated </h6><span class="urdu"> (قابل زکٰوۃرقم )</span></label>
+                    <p class="output" id="payable-amount-total"></p>
+                </column>
+
+            </div>
+
+            <div class="carousel-item">
+
+                <column>
+
+                    <label for="formula"><h6>Zakah-computing formula: Total amount to be divided by 40 </h6><span class="urdu"> (زکٰوۃ نکالنے کافار مولا : کل رقم کو 40 پر تقسیم کریں)</span></label>
+                    <p class="output" id="formula"></p>
+                </column>
+
+            </div>
+
+
+        </div>
+        <button class="carousel-control-prev side-buttons" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon prev" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next side-buttons" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+          <span class="carousel-control-next-icon next" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- .................................................................................. -->
+
+
+    <button type="submit" class="button no" onclick="calculateZakah()">CALCULATE</button>
+    <label for="final-zakat" class="no"><h2>FINAL ZAKAH</h2></label>
+    <p class="output no" id="final-zakat"></p>
+    <a target="_blank" href="https://saylaniwelfare.com/en/donate" class="donate-button no">Donate To Saylani</a>
+
+    <!-- .................................................................................. -->
+
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2 yes" tabindex="0">
+        <h2 class="inner">Details</h2>
+        <h2 class="yes total-amount inner">Total Amount</h2>
+        <table>
+            <tr>
+                <td>1</td>
+                <td class="tables">Gold</td>
+                <td id="gold-t">0</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="tables">Silver</td>
+                <td id="silver-t">0</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="tables">Currency</td>
+                <td id="currency-t">0</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="tables">Bank Deposit</td>
+                <td id="bank-t">0</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="tables">Prize Bonds</td>
+                <td id="bond-t">0</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td class="tables">Private Funds</td>
+                <td id="fund-t">0</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td class="tables">Commitee</td>
+                <td id="commitee-t">0</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td class="tables">Raw Material</td>
+                <td id="raw-t">0</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td class="tables">Manufactured Goods</td>
+                <td id="goods-t">0</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td class="tables">Plots, Houses For Trading</td>
+                <td id="plots-t">0</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td class="tables">Business Assets</td>
+                <td id="assets-t">0</td>
+            </tr>
+        </table>
+        <h2 class="inner">Amount To Deduct</h2>
+        <table>
+            <tr>
+                <td>1</td>
+                <td class="tables">Loan</td>
+                <td id="loan-t">0</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="tables">Instalments</td>
+                <td id="instalments-t">0</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="tables">Payable Commitee</td>
+                <td id="commitee-remaining-t">0</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="tables">Utility Bills</td>
+                <td id="bills-t">0</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="tables">Pay To Dealers</td>
+                <td id="dealers-t">0</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td class="tables">Salaries</td>
+                <td id="salaries-t">0</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td class="tables">Unpaid Zakah</td>
+                <td id="unpaid-t">0</td>
+            </tr>
+        </table>
+        <p id="explanation"></p>
+    </div>
+
+    <!-- .................................................................................. -->
+    <a class="center black no" href="#top"><i class="bi bi-arrow-up"></i>Go To Top</a>
+    <p class="center no">Thanks For Visiting Regards! Muhammad Owais&copy;</p>
+    <!-- javascript -->
+    <script src="./main.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
